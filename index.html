@@ -13,59 +13,79 @@
         .cart-sidebar { transition: transform 0.3s ease-in-out; }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 flex flex-col min-h-screen">
 
     <nav class="bg-white shadow-sm sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
-        <h1 class="text-3xl font-bold tracking-tighter text-black">D'ilo</h1>
+        <h1 class="text-3xl font-bold tracking-tighter text-black uppercase">D'ilo</h1>
         <div class="relative cursor-pointer" onclick="toggleCart()">
             <i class="fa-solid fa-bag-shopping text-2xl text-gray-700"></i>
-            <span id="cart-count" class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">0</span>
         </div>
     </nav>
 
-    <header class="bg-gray-900 text-white py-20 px-6 text-center">
-        <h2 class="text-4xl md:text-6xl mb-4">Winter 2026 Most Sold</h2>
-        <p class="text-gray-400 mb-8">Stay warm with our premium seasonal essentials.</p>
-        <a href="#shop" class="bg-white text-black px-8 py-3 rounded-md font-bold hover:bg-gray-200 transition">View Best Sellers</a>
-    </header>
+    <div class="flex-grow">
+        <header class="bg-gray-900 text-white py-20 px-6 text-center">
+            <h2 class="text-4xl md:text-6xl mb-4">Winter 2026 Most Sold</h2>
+            <p class="text-gray-400 mb-8 uppercase tracking-widest">Premium Seasonal Essentials</p>
+            <a href="#shop" class="bg-white text-black px-8 py-3 rounded-sm font-bold hover:bg-gray-200 transition">View Best Sellers</a>
+        </header>
 
-    <main id="shop" class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
-        <div class="bg-white p-4 rounded-lg shadow-sm group">
-            <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?auto=format&fit=crop&w=400" alt="Wool Coat" class="w-full h-full object-cover group-hover:scale-105 transition">
+        <main id="shop" class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
+            <div class="bg-white p-4 rounded-lg shadow-sm group">
+                <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=500&q=80" alt="Wool Coat" class="w-full h-full object-cover group-hover:scale-105 transition">
+                </div>
+                <h3 class="font-semibold text-lg">Premium Wool Coat</h3>
+                <p class="text-gray-500 mb-2">45.000 BHD</p>
+                <button onclick="addToCart('Premium Wool Coat', 45)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition">Add to Cart</button>
             </div>
-            <h3 class="font-semibold text-lg">Premium Wool Coat</h3>
-            <p class="text-gray-500 mb-2">45.000 BHD</p>
-            <button onclick="addToCart('Premium Wool Coat', 45)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition">Add to Cart</button>
-        </div>
 
-        <div class="bg-white p-4 rounded-lg shadow-sm group">
-            <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1574201635302-388dd92a4c3f?auto=format&fit=crop&w=400" alt="Cashmere Sweater" class="w-full h-full object-cover group-hover:scale-105 transition">
+            <div class="bg-white p-4 rounded-lg shadow-sm group">
+                <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=500&q=80" alt="Cashmere Sweater" class="w-full h-full object-cover group-hover:scale-105 transition">
+                </div>
+                <h3 class="font-semibold text-lg">Oversized Cashmere Knit</h3>
+                <p class="text-gray-500 mb-2">22.500 BHD</p>
+                <button onclick="addToCart('Oversized Cashmere Knit', 22.5)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition">Add to Cart</button>
             </div>
-            <h3 class="font-semibold text-lg">Oversized Cashmere Knit</h3>
-            <p class="text-gray-500 mb-2">22.500 BHD</p>
-            <button onclick="addToCart('Oversized Cashmere Knit', 22.5)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition">Add to Cart</button>
-        </div>
 
-        <div class="bg-white p-4 rounded-lg shadow-sm group">
-            <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1542841791-1925b02a2bcc?auto=format&fit=crop&w=400" alt="Leather Boots" class="w-full h-full object-cover group-hover:scale-105 transition">
+            <div class="bg-white p-4 rounded-lg shadow-sm group">
+                <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=500&q=80" alt="Urban Leather Boots" class="w-full h-full object-cover group-hover:scale-105 transition">
+                </div>
+                <h3 class="font-semibold text-lg">Urban Leather Boots</h3>
+                <p class="text-gray-500 mb-2">38.000 BHD</p>
+                <button onclick="addToCart('Urban Leather Boots', 38)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition">Add to Cart</button>
             </div>
-            <h3 class="font-semibold text-lg">Urban Leather Boots</h3>
-            <p class="text-gray-500 mb-2">38.000 BHD</p>
-            <button onclick="addToCart('Urban Leather Boots', 38)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition">Add to Cart</button>
+        </main>
+    </div>
+
+    <footer class="bg-white border-t py-12 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col items-center">
+            <h3 class="text-xl font-bold mb-6 tracking-tighter uppercase">D'ilo Official</h3>
+            <div class="flex space-x-8 mb-8">
+                <a href="https://www.instagram.com/d.iloofficial/?hl=en" target="_blank" class="text-2xl text-gray-600 hover:text-pink-600 transition">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@d.iloofficial?lang=en" target="_blank" class="text-2xl text-gray-600 hover:text-black transition">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://www.youtube.com/@d.iloofficial" target="_blank" class="text-2xl text-gray-600 hover:text-red-600 transition">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+            <p class="text-gray-400 text-sm">© 2026 D'ilo Boutique. All rights reserved.</p>
         </div>
-    </main>
+    </footer>
 
     <div id="cart-sidebar" class="fixed top-0 right-0 w-80 h-full bg-white shadow-2xl z-[60] translate-x-full cart-sidebar p-6">
         <div class="flex justify-between items-center mb-8">
-            <h2 class="text-2xl font-bold">Your Cart</h2>
-            <button onclick="toggleCart()" class="text-2xl">&times;</button>
+            <h2 class="text-2xl font-bold uppercase tracking-tight">Your Bag</h2>
+            <button onclick="toggleCart()" class="text-3xl">&times;</button>
         </div>
         
         <div id="cart-items" class="space-y-4 mb-8 h-[60vh] overflow-y-auto">
-            <p class="text-gray-400 text-center">Your cart is empty.</p>
+            <p class="text-gray-400 text-center mt-10">Your cart is empty.</p>
         </div>
 
         <div class="border-t pt-4">
@@ -73,7 +93,7 @@
                 <span>Total:</span>
                 <span id="cart-total">0.000 BHD</span>
             </div>
-            <button onclick="handleCheckout()" class="w-full bg-blue-600 text-white py-3 rounded-md font-semibold hover:bg-blue-700">Checkout</button>
+            <button onclick="handleCheckout()" class="w-full bg-black text-white py-3 rounded-md font-semibold hover:bg-gray-800">Checkout</button>
         </div>
     </div>
 
@@ -98,19 +118,19 @@
             cartCount.innerText = cart.length;
             
             if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p class="text-gray-400 text-center">Your cart is empty.</p>';
+                cartItemsContainer.innerHTML = '<p class="text-gray-400 text-center mt-10">Your cart is empty.</p>';
                 cartTotal.innerText = '0.000 BHD';
                 return;
             }
 
             cartItemsContainer.innerHTML = cart.map((item, index) => `
-                <div class="flex justify-between items-center bg-gray-50 p-3 rounded">
+                <div class="flex justify-between items-center bg-gray-50 p-4 rounded-md">
                     <div>
-                        <p class="font-medium text-sm">${item.name}</p>
-                        <p class="text-xs text-gray-500">${item.price.toFixed(3)} BHD</p>
+                        <p class="font-bold text-xs uppercase">${item.name}</p>
+                        <p class="text-sm text-gray-600">${item.price.toFixed(3)} BHD</p>
                     </div>
-                    <button onclick="removeItem(${index})" class="text-red-400 hover:text-red-600">
-                        <i class="fa-solid fa-trash text-sm"></i>
+                    <button onclick="removeItem(${index})" class="text-red-500 hover:text-red-700">
+                        <i class="fa-solid fa-trash-can"></i>
                     </button>
                 </div>
             `).join('');
@@ -124,10 +144,9 @@
             updateCart();
         }
 
-        // CUSTOM CHECKOUT ALERT
         function handleCheckout() {
             if(cart.length === 0) {
-                alert("Please add items to your cart first!");
+                alert("Your bag is empty!");
             } else {
                 alert("Product not available in your country.");
             }
