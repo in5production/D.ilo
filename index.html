@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegance | Women's Boutique</title>
+    <title>D'ilo | Winter Collection</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -16,51 +16,51 @@
 <body class="bg-gray-50">
 
     <nav class="bg-white shadow-sm sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold tracking-widest text-pink-600">ELEGANCE</h1>
+        <h1 class="text-3xl font-bold tracking-tighter text-black">D'ilo</h1>
         <div class="relative cursor-pointer" onclick="toggleCart()">
             <i class="fa-solid fa-bag-shopping text-2xl text-gray-700"></i>
-            <span id="cart-count" class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
         </div>
     </nav>
 
-    <header class="bg-pink-100 py-16 px-6 text-center">
-        <h2 class="text-4xl md:text-6xl mb-4">New Spring Collection</h2>
-        <p class="text-gray-600 mb-8">Discover your style with our latest arrivals.</p>
-        <a href="#shop" class="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition">Shop Now</a>
+    <header class="bg-gray-900 text-white py-20 px-6 text-center">
+        <h2 class="text-4xl md:text-6xl mb-4">Winter 2026 Most Sold</h2>
+        <p class="text-gray-400 mb-8">Stay warm with our premium seasonal essentials.</p>
+        <a href="#shop" class="bg-white text-black px-8 py-3 rounded-md font-bold hover:bg-gray-200 transition">View Best Sellers</a>
     </header>
 
     <main id="shop" class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
         <div class="bg-white p-4 rounded-lg shadow-sm group">
             <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=400" alt="Dress" class="w-full h-full object-cover group-hover:scale-105 transition">
+                <img src="https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?auto=format&fit=crop&w=400" alt="Wool Coat" class="w-full h-full object-cover group-hover:scale-105 transition">
             </div>
-            <h3 class="font-semibold text-lg">Floral Summer Dress</h3>
-            <p class="text-gray-500 mb-2">$59.00</p>
-            <button onclick="addToCart('Floral Summer Dress', 59)" class="w-full border-2 border-black py-2 rounded-md hover:bg-black hover:text-white transition">Add to Cart</button>
+            <h3 class="font-semibold text-lg">Premium Wool Coat</h3>
+            <p class="text-gray-500 mb-2">45.000 BHD</p>
+            <button onclick="addToCart('Premium Wool Coat', 45)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition">Add to Cart</button>
         </div>
 
         <div class="bg-white p-4 rounded-lg shadow-sm group">
             <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=400" alt="Blazer" class="w-full h-full object-cover group-hover:scale-105 transition">
+                <img src="https://images.unsplash.com/photo-1574201635302-388dd92a4c3f?auto=format&fit=crop&w=400" alt="Cashmere Sweater" class="w-full h-full object-cover group-hover:scale-105 transition">
             </div>
-            <h3 class="font-semibold text-lg">Classic White Blazer</h3>
-            <p class="text-gray-500 mb-2">$85.00</p>
-            <button onclick="addToCart('Classic White Blazer', 85)" class="w-full border-2 border-black py-2 rounded-md hover:bg-black hover:text-white transition">Add to Cart</button>
+            <h3 class="font-semibold text-lg">Oversized Cashmere Knit</h3>
+            <p class="text-gray-500 mb-2">22.500 BHD</p>
+            <button onclick="addToCart('Oversized Cashmere Knit', 22.5)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition">Add to Cart</button>
         </div>
 
         <div class="bg-white p-4 rounded-lg shadow-sm group">
             <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1539109136881-3be06109e7c6?auto=format&fit=crop&w=400" alt="Silk Top" class="w-full h-full object-cover group-hover:scale-105 transition">
+                <img src="https://images.unsplash.com/photo-1542841791-1925b02a2bcc?auto=format&fit=crop&w=400" alt="Leather Boots" class="w-full h-full object-cover group-hover:scale-105 transition">
             </div>
-            <h3 class="font-semibold text-lg">Satin Silk Top</h3>
-            <p class="text-gray-500 mb-2">$42.00</p>
-            <button onclick="addToCart('Satin Silk Top', 42)" class="w-full border-2 border-black py-2 rounded-md hover:bg-black hover:text-white transition">Add to Cart</button>
+            <h3 class="font-semibold text-lg">Urban Leather Boots</h3>
+            <p class="text-gray-500 mb-2">38.000 BHD</p>
+            <button onclick="addToCart('Urban Leather Boots', 38)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition">Add to Cart</button>
         </div>
     </main>
 
     <div id="cart-sidebar" class="fixed top-0 right-0 w-80 h-full bg-white shadow-2xl z-[60] translate-x-full cart-sidebar p-6">
         <div class="flex justify-between items-center mb-8">
-            <h2 class="text-2xl font-bold">Your Bag</h2>
+            <h2 class="text-2xl font-bold">Your Cart</h2>
             <button onclick="toggleCart()" class="text-2xl">&times;</button>
         </div>
         
@@ -71,9 +71,9 @@
         <div class="border-t pt-4">
             <div class="flex justify-between text-xl font-bold mb-4">
                 <span>Total:</span>
-                <span id="cart-total">$0.00</span>
+                <span id="cart-total">0.000 BHD</span>
             </div>
-            <button class="w-full bg-pink-600 text-white py-3 rounded-md font-semibold hover:bg-pink-700">Checkout</button>
+            <button onclick="handleCheckout()" class="w-full bg-blue-600 text-white py-3 rounded-md font-semibold hover:bg-blue-700">Checkout</button>
         </div>
     </div>
 
@@ -99,29 +99,38 @@
             
             if (cart.length === 0) {
                 cartItemsContainer.innerHTML = '<p class="text-gray-400 text-center">Your cart is empty.</p>';
-                cartTotal.innerText = '$0.00';
+                cartTotal.innerText = '0.000 BHD';
                 return;
             }
 
             cartItemsContainer.innerHTML = cart.map((item, index) => `
                 <div class="flex justify-between items-center bg-gray-50 p-3 rounded">
                     <div>
-                        <p class="font-medium">${item.name}</p>
-                        <p class="text-sm text-gray-500">$${item.price}</p>
+                        <p class="font-medium text-sm">${item.name}</p>
+                        <p class="text-xs text-gray-500">${item.price.toFixed(3)} BHD</p>
                     </div>
                     <button onclick="removeItem(${index})" class="text-red-400 hover:text-red-600">
-                        <i class="fa-solid fa-trash"></i>
+                        <i class="fa-solid fa-trash text-sm"></i>
                     </button>
                 </div>
             `).join('');
 
             const total = cart.reduce((sum, item) => sum + item.price, 0);
-            cartTotal.innerText = `$${total.toFixed(2)}`;
+            cartTotal.innerText = `${total.toFixed(3)} BHD`;
         }
 
         function removeItem(index) {
             cart.splice(index, 1);
             updateCart();
+        }
+
+        // CUSTOM CHECKOUT ALERT
+        function handleCheckout() {
+            if(cart.length === 0) {
+                alert("Please add items to your cart first!");
+            } else {
+                alert("Product not available in your country.");
+            }
         }
     </script>
 </body>
