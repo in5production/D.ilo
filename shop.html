@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance | Women's Boutique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+        .cart-sidebar { transition: transform 0.3s ease-in-out; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-widest text-pink-600">ELEGANCE</h1>
+        <div class="relative cursor-pointer" onclick="toggleCart()">
+            <i class="fa-solid fa-bag-shopping text-2xl text-gray-700"></i>
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+        </div>
+    </nav>
+
+    <header class="bg-pink-100 py-16 px-6 text-center">
+        <h2 class="text-4xl md:text-6xl mb-4">New Spring Collection</h2>
+        <p class="text-gray-600 mb-8">Discover your style with our latest arrivals.</p>
+        <a href="#shop" class="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition">Shop Now</a>
+    </header>
+
+    <main id="shop" class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
+        <div class="bg-white p-4 rounded-lg shadow-sm group">
+            <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=400" alt="Dress" class="w-full h-full object-cover group-hover:scale-105 transition">
+            </div>
+            <h3 class="font-semibold text-lg">Floral Summer Dress</h3>
+            <p class="text-gray-500 mb-2">$59.00</p>
+            <button onclick="addToCart('Floral Summer Dress', 59)" class="w-full border-2 border-black py-2 rounded-md hover:bg-black hover:text-white transition">Add to Cart</button>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-sm group">
+            <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=400" alt="Blazer" class="w-full h-full object-cover group-hover:scale-105 transition">
+            </div>
+            <h3 class="font-semibold text-lg">Classic White Blazer</h3>
+            <p class="text-gray-500 mb-2">$85.00</p>
+            <button onclick="addToCart('Classic White Blazer', 85)" class="w-full border-2 border-black py-2 rounded-md hover:bg-black hover:text-white transition">Add to Cart</button>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-sm group">
+            <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1539109136881-3be06109e7c6?auto=format&fit=crop&w=400" alt="Silk Top" class="w-full h-full object-cover group-hover:scale-105 transition">
+            </div>
+            <h3 class="font-semibold text-lg">Satin Silk Top</h3>
+            <p class="text-gray-500 mb-2">$42.00</p>
+            <button onclick="addToCart('Satin Silk Top', 42)" class="w-full border-2 border-black py-2 rounded-md hover:bg-black hover:text-white transition">Add to Cart</button>
+        </div>
+    </main>
+
+    <div id="cart-sidebar" class="fixed top-0 right-0 w-80 h-full bg-white shadow-2xl z-[60] translate-x-full cart-sidebar p-6">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-2xl font-bold">Your Bag</h2>
+            <button onclick="toggleCart()" class="text-2xl">&times;</button>
+        </div>
+        
+        <div id="cart-items" class="space-y-4 mb-8 h-[60vh] overflow-y-auto">
+            <p class="text-gray-400 text-center">Your cart is empty.</p>
+        </div>
+
+        <div class="border-t pt-4">
+            <div class="flex justify-between text-xl font-bold mb-4">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button class="w-full bg-pink-600 text-white py-3 rounded-md font-semibold hover:bg-pink-700">Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartCount = document.getElementById('cart-count');
+        const cartTotal = document.getElementById('cart-total');
+
+        function toggleCart() {
+            cartSidebar.classList.toggle('translate-x-full');
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+            if(cartSidebar.classList.contains('translate-x-full')) toggleCart();
+        }
+
+        function updateCart() {
+            cartCount.innerText = cart.length;
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-gray-400 text-center">Your cart is empty.</p>';
+                cartTotal.innerText = '$0.00';
+                return;
+            }
+
+            cartItemsContainer.innerHTML = cart.map((item, index) => `
+                <div class="flex justify-between items-center bg-gray-50 p-3 rounded">
+                    <div>
+                        <p class="font-medium">${item.name}</p>
+                        <p class="text-sm text-gray-500">$${item.price}</p>
+                    </div>
+                    <button onclick="removeItem(${index})" class="text-red-400 hover:text-red-600">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            cartTotal.innerText = `$${total.toFixed(2)}`;
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+    </script>
+</body>
+</html>
