@@ -22,8 +22,8 @@
         body { font-family: 'Poppins', sans-serif; }
         h1, h2 { font-family: 'Playfair Display', serif; }
         .cart-sidebar { transition: transform 0.3s ease-in-out; }
-        .contact-card { background: white; border-radius: 12px; transition: transform 0.2s; }
-        .contact-card:hover { transform: translateY(-5px); }
+        .contact-card { background: white; border-radius: 12px; transition: transform 0.2s; border: 1px solid #f3f4f6; }
+        .contact-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
     </style>
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
@@ -48,27 +48,27 @@
                 <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=500&q=80" alt="Wool Coat" class="w-full h-full object-cover group-hover:scale-105 transition">
                 </div>
-                <h3 class="font-semibold text-lg text-center">Premium Wool Coat</h3>
+                <h3 class="font-semibold text-lg text-center uppercase">Premium Wool Coat</h3>
                 <p class="text-gray-500 mb-2 text-center">45.000 BHD</p>
-                <button onclick="addToCart('Premium Wool Coat', 45)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition uppercase text-sm font-bold">Add to Cart</button>
+                <button onclick="addToCart('Premium Wool Coat', 45)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition uppercase text-sm font-bold tracking-widest">Add to Cart</button>
             </div>
 
             <div class="bg-white p-4 rounded-lg shadow-sm group">
                 <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=500&q=80" alt="Cashmere Sweater" class="w-full h-full object-cover group-hover:scale-105 transition">
                 </div>
-                <h3 class="font-semibold text-lg text-center">Oversized Cashmere Knit</h3>
+                <h3 class="font-semibold text-lg text-center uppercase">Cashmere Knit</h3>
                 <p class="text-gray-500 mb-2 text-center">22.500 BHD</p>
-                <button onclick="addToCart('Oversized Cashmere Knit', 22.5)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition uppercase text-sm font-bold">Add to Cart</button>
+                <button onclick="addToCart('Cashmere Knit', 22.5)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition uppercase text-sm font-bold tracking-widest">Add to Cart</button>
             </div>
 
             <div class="bg-white p-4 rounded-lg shadow-sm group">
                 <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=500&q=80" alt="Urban Leather Boots" class="w-full h-full object-cover group-hover:scale-105 transition">
                 </div>
-                <h3 class="font-semibold text-lg text-center">Urban Leather Boots</h3>
+                <h3 class="font-semibold text-lg text-center uppercase">Urban Leather Boots</h3>
                 <p class="text-gray-500 mb-2 text-center">38.000 BHD</p>
-                <button onclick="addToCart('Urban Leather Boots', 38)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition uppercase text-sm font-bold">Add to Cart</button>
+                <button onclick="addToCart('Urban Leather Boots', 38)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition uppercase text-sm font-bold tracking-widest">Add to Cart</button>
             </div>
         </main>
     </div>
@@ -79,29 +79,29 @@
             <p class="text-gray-500 mb-10">Reach out for support, export, production, or sales.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
-                <div class="contact-card p-6 shadow-sm border border-gray-100">
+                <div class="contact-card p-6 shadow-sm">
                     <h3 class="font-bold text-gray-900 mb-2">Support</h3>
-                    <a href="mailto:info@diloofficial.com" class="text-yellow-600 text-sm hover:underline">info@diloofficial.com</a>
+                    <a href="mailto:info@diloofficial.com" class="text-amber-600 text-sm hover:underline">info@diloofficial.com</a>
                 </div>
-                <div class="contact-card p-6 shadow-sm border border-gray-100">
+                <div class="contact-card p-6 shadow-sm">
                     <h3 class="font-bold text-gray-900 mb-2">Export & Delivery</h3>
-                    <a href="mailto:export@diloofficial.com" class="text-yellow-600 text-sm hover:underline">export@diloofficial.com</a>
+                    <a href="mailto:export@diloofficial.com" class="text-amber-600 text-sm hover:underline">export@diloofficial.com</a>
                 </div>
-                <div class="contact-card p-6 shadow-sm border border-gray-100">
+                <div class="contact-card p-6 shadow-sm">
                     <h3 class="font-bold text-gray-900 mb-2">Production</h3>
-                    <a href="mailto:production@diloofficial.com" class="text-yellow-600 text-sm hover:underline">production@diloofficial.com</a>
+                    <a href="mailto:production@diloofficial.com" class="text-amber-600 text-sm hover:underline">production@diloofficial.com</a>
                 </div>
-                <div class="contact-card p-6 shadow-sm border border-gray-100">
+                <div class="contact-card p-6 shadow-sm">
                     <h3 class="font-bold text-gray-900 mb-2">Sales & Marketing</h3>
-                    <a href="mailto:sales@diloofficial.com" class="text-yellow-600 text-sm hover:underline">sales@diloofficial.com</a>
+                    <a href="mailto:sales@diloofficial.com" class="text-amber-600 text-sm hover:underline">sales@diloofficial.com</a>
                 </div>
             </div>
 
             <div class="flex justify-center space-x-8 mb-12">
-                <a href="https://www.tiktok.com/@d.iloofficial" target="_blank" class="text-2xl text-gray-800 hover:text-black transition"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="https://www.instagram.com/d.iloofficial/" target="_blank" class="text-2xl text-gray-800 hover:text-pink-600 transition"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://x.com" target="_blank" class="text-2xl text-gray-800 hover:text-blue-400 transition"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.youtube.com/@d.iloofficial" target="_blank" class="text-2xl text-gray-800 hover:text-red-600 transition"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@d.iloofficial" target="_blank" class="text-2xl text-gray-800"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/d.iloofficial/" target="_blank" class="text-2xl text-gray-800"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com" target="_blank" class="text-2xl text-gray-800"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/@d.iloofficial" target="_blank" class="text-2xl text-gray-800"><i class="fa-brands fa-youtube"></i></a>
             </div>
 
             <p class="text-center text-gray-400 text-xs mt-10 uppercase tracking-widest">© 2026 D'ilo Boutique. All rights reserved.</p>
@@ -121,15 +121,15 @@
                 <span>Total:</span>
                 <span id="cart-total">0.000 BHD</span>
             </div>
-            <button onclick="handleCheckout()" class="w-full bg-black text-white py-3 rounded-md font-semibold hover:bg-gray-800 uppercase tracking-widest">Checkout</button>
+            <button onclick="handleCheckout()" class="w-full bg-black text-white py-4 rounded-md font-bold uppercase tracking-widest hover:bg-gray-800">Checkout</button>
         </div>
     </div>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-        import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
 
+        // Your Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyC4t5UPTr21nV5RCtHmmrAFOPc0Bcb172E",
             authDomain: "dilo-107c9.firebaseapp.com",
@@ -142,7 +142,6 @@
 
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
-        const analytics = getAnalytics(app);
 
         window.cart = [];
         window.toggleCart = () => document.getElementById('cart-sidebar').classList.toggle('translate-x-full');
@@ -150,8 +149,8 @@
         window.addToCart = (name, price) => {
             window.cart.push({ name, price });
             updateCartUI();
+            // Facebook tracking
             fbq('track', 'AddToCart', { content_name: name, value: price, currency: 'BHD' });
-            logEvent(analytics, 'add_to_cart', { item_name: name, value: price, currency: 'BHD' });
             if(document.getElementById('cart-sidebar').classList.contains('translate-x-full')) window.toggleCart();
         };
 
@@ -178,21 +177,32 @@
             updateCartUI();
         };
 
+        // FINAL CHECKOUT LOGIC
         window.handleCheckout = async () => {
             if(window.cart.length === 0) return alert("Your bag is empty!");
+
             const totalAmount = window.cart.reduce((sum, item) => sum + item.price, 0);
+            const itemNames = window.cart.map(i => i.name).join(', ');
+
             try {
-                await addDoc(collection(db, "purchase_attempts"), {
-                    items: window.cart,
-                    total: totalAmount,
+                // 1. COLLECT DATA: Send to Firestore
+                await addDoc(collection(db, "purchases"), {
+                    items: itemNames,
+                    total_value: totalAmount,
                     currency: "BHD",
                     timestamp: serverTimestamp(),
-                    status: "geo_restricted"
+                    status: "geo_restricted_attempt"
                 });
+
+                // 2. FB TRACKING: Initiate Checkout
                 fbq('track', 'InitiateCheckout', { value: totalAmount, currency: 'BHD' });
+
+                // 3. SHOW ALERT
                 alert("Product not available in your country.");
+                
             } catch (e) {
-                console.error("Tracking Error: ", e);
+                console.error("Error saving to Firestore: ", e);
+                alert("Product not available in your country.");
             }
         };
     </script>
