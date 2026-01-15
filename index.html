@@ -11,7 +11,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
         body { font-family: 'Poppins', sans-serif; background-color: #f9fafb; }
         h1, h2 { font-family: 'Playfair Display', serif; }
-        .contact-card { background: white; border-radius: 12px; padding: 24px; border: 1px solid #edf2f7; transition: transform 0.2s; }
+        /* Style for Contact Cards matched to Reference image_878b07 */
+        .contact-card { background: white; border-radius: 12px; padding: 24px; border: 1px solid #edf2f7; transition: transform 0.2s; text-align: left; }
         .contact-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
         .cart-sidebar { transition: transform 0.3s ease-in-out; }
     </style>
@@ -76,10 +77,17 @@
             <a href="#" class="text-2xl text-gray-800 hover:text-black"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://youtube.com/@d.iloofficial" target="_blank" class="text-2xl text-gray-800 hover:text-black"><i class="fa-brands fa-youtube"></i></a>
         </div>
+        
+        <div class="text-center mt-20 text-gray-400 text-sm">
+            © 2026 D'ilo Boutique. All rights reserved.
+        </div>
     </section>
 
     <div id="cart-sidebar" class="fixed top-0 right-0 w-80 h-full bg-white shadow-2xl z-[60] translate-x-full cart-sidebar p-6">
-        <h2 class="text-2xl font-bold uppercase mb-8">Your Bag</h2>
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-2xl font-bold uppercase">Your Bag</h2>
+            <button onclick="toggleCart()" class="text-2xl">&times;</button>
+        </div>
         <div id="cart-items" class="space-y-4 mb-8 h-[60vh] overflow-y-auto"></div>
         <div class="border-t pt-4">
             <div class="flex justify-between text-xl font-bold mb-4">
@@ -94,6 +102,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+        // Your Firebase config for Dilo-107c9
         const firebaseConfig = {
             apiKey: "AIzaSyC4t5UPTr21nV5RCtHmmrAFOPc0Bcb172E",
             authDomain: "dilo-107c9.firebaseapp.com",
@@ -120,12 +129,13 @@
             const totalDisplay = document.getElementById('cart-total');
             document.getElementById('cart-count').innerText = window.cart.length;
             
-            container.innerHTML = window.cart.map((item, index) => `
-                <div class="flex justify-between items-center bg-gray-50 p-3 rounded">
-                    <span class="text-xs font-bold uppercase">${item.name}</span>
-                    <span class="text-sm">${item.price.toFixed(3)} BHD</span>
-                </div>
-            `).join('');
+            container.innerHTML = window.cart.length > 0 ? 
+                window.cart.map((item, index) => `
+                    <div class="flex justify-between items-center bg-gray-50 p-3 rounded">
+                        <span class="text-xs font-bold uppercase">${item.name}</span>
+                        <span class="text-sm font-semibold">${item.price.toFixed(3)} BHD</span>
+                    </div>
+                `).join('') : '<p class="text-center text-gray-400 mt-10">Empty bag.</p>';
 
             const total = window.cart.reduce((sum, item) => sum + item.price, 0);
             totalDisplay.innerText = `${total.toFixed(3)} BHD`;
@@ -136,16 +146,20 @@
             const total = window.cart.reduce((sum, item) => sum + item.price, 0);
 
             try {
-                // This logs the data to the 'purchases' collection in your Firebase
+                // LOG TO FIREBASE: This will make data appear in your Console under "purchases"
                 await addDoc(collection(db, "purchases"), {
                     items: window.cart.map(i => i.name),
                     total_amount: total,
+                    currency: "BHD",
                     timestamp: serverTimestamp(),
-                    status: "geo_restricted_attempt"
+                    status: "checkout_attempt"
                 });
+                
+                // USER FEEDBACK
                 alert("Product not available in your country.");
             } catch (e) {
-                console.error(e);
+                console.error("Firebase Error: ", e);
+                alert("Checkout system currently unavailable.");
             }
         };
     </script>
