@@ -22,6 +22,8 @@
         body { font-family: 'Poppins', sans-serif; }
         h1, h2 { font-family: 'Playfair Display', serif; }
         .cart-sidebar { transition: transform 0.3s ease-in-out; }
+        .contact-card { background: white; border-radius: 12px; transition: transform 0.2s; }
+        .contact-card:hover { transform: translateY(-5px); }
     </style>
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
@@ -46,57 +48,65 @@
                 <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=500&q=80" alt="Wool Coat" class="w-full h-full object-cover group-hover:scale-105 transition">
                 </div>
-                <h3 class="font-semibold text-lg">Premium Wool Coat</h3>
-                <p class="text-gray-500 mb-2">45.000 BHD</p>
-                <button onclick="addToCart('Premium Wool Coat', 45)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition">Add to Cart</button>
+                <h3 class="font-semibold text-lg text-center">Premium Wool Coat</h3>
+                <p class="text-gray-500 mb-2 text-center">45.000 BHD</p>
+                <button onclick="addToCart('Premium Wool Coat', 45)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition uppercase text-sm font-bold">Add to Cart</button>
             </div>
 
             <div class="bg-white p-4 rounded-lg shadow-sm group">
                 <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=500&q=80" alt="Cashmere Sweater" class="w-full h-full object-cover group-hover:scale-105 transition">
                 </div>
-                <h3 class="font-semibold text-lg">Oversized Cashmere Knit</h3>
-                <p class="text-gray-500 mb-2">22.500 BHD</p>
-                <button onclick="addToCart('Oversized Cashmere Knit', 22.5)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition">Add to Cart</button>
+                <h3 class="font-semibold text-lg text-center">Oversized Cashmere Knit</h3>
+                <p class="text-gray-500 mb-2 text-center">22.500 BHD</p>
+                <button onclick="addToCart('Oversized Cashmere Knit', 22.5)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition uppercase text-sm font-bold">Add to Cart</button>
             </div>
 
             <div class="bg-white p-4 rounded-lg shadow-sm group">
                 <div class="h-80 bg-gray-200 rounded-md mb-4 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=500&q=80" alt="Urban Leather Boots" class="w-full h-full object-cover group-hover:scale-105 transition">
                 </div>
-                <h3 class="font-semibold text-lg">Urban Leather Boots</h3>
-                <p class="text-gray-500 mb-2">38.000 BHD</p>
-                <button onclick="addToCart('Urban Leather Boots', 38)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition">Add to Cart</button>
+                <h3 class="font-semibold text-lg text-center">Urban Leather Boots</h3>
+                <p class="text-gray-500 mb-2 text-center">38.000 BHD</p>
+                <button onclick="addToCart('Urban Leather Boots', 38)" class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition uppercase text-sm font-bold">Add to Cart</button>
             </div>
         </main>
     </div>
 
-    <footer class="bg-white border-t py-12 px-6">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="flex flex-col items-center md:items-start">
-                <h3 class="text-xl font-bold mb-4 uppercase tracking-tighter">D'ilo Official</h3>
-                <div class="flex space-x-6">
-                    <a href="https://www.instagram.com/d.iloofficial/" target="_blank" class="text-2xl text-gray-600 hover:text-pink-600"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@d.iloofficial" target="_blank" class="text-2xl text-gray-600 hover:text-black"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://www.youtube.com/@d.iloofficial" target="_blank" class="text-2xl text-gray-600 hover:text-red-600"><i class="fa-brands fa-youtube"></i></a>
+    <section class="bg-gray-50 py-16 px-6 border-t border-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-2">Contact</h2>
+            <p class="text-gray-500 mb-10">Reach out for support, export, production, or sales.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
+                <div class="contact-card p-6 shadow-sm border border-gray-100">
+                    <h3 class="font-bold text-gray-900 mb-2">Support</h3>
+                    <a href="mailto:info@diloofficial.com" class="text-yellow-600 text-sm hover:underline">info@diloofficial.com</a>
+                </div>
+                <div class="contact-card p-6 shadow-sm border border-gray-100">
+                    <h3 class="font-bold text-gray-900 mb-2">Export & Delivery</h3>
+                    <a href="mailto:export@diloofficial.com" class="text-yellow-600 text-sm hover:underline">export@diloofficial.com</a>
+                </div>
+                <div class="contact-card p-6 shadow-sm border border-gray-100">
+                    <h3 class="font-bold text-gray-900 mb-2">Production</h3>
+                    <a href="mailto:production@diloofficial.com" class="text-yellow-600 text-sm hover:underline">production@diloofficial.com</a>
+                </div>
+                <div class="contact-card p-6 shadow-sm border border-gray-100">
+                    <h3 class="font-bold text-gray-900 mb-2">Sales & Marketing</h3>
+                    <a href="mailto:sales@diloofficial.com" class="text-yellow-600 text-sm hover:underline">sales@diloofficial.com</a>
                 </div>
             </div>
-            
-            <div class="flex flex-col items-center text-sm space-y-2">
-                <h3 class="font-bold uppercase mb-2">Email Inquiries</h3>
-                <a href="mailto:info@diloofficial.com" class="text-gray-600 hover:text-black">General: info@diloofficial.com</a>
-                <a href="mailto:export@diloofficial.com" class="text-gray-600 hover:text-black">Export: export@diloofficial.com</a>
-                <a href="mailto:production@diloofficial.com" class="text-gray-600 hover:text-black">Production: production@diloofficial.com</a>
+
+            <div class="flex justify-center space-x-8 mb-12">
+                <a href="https://www.tiktok.com/@d.iloofficial" target="_blank" class="text-2xl text-gray-800 hover:text-black transition"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/d.iloofficial/" target="_blank" class="text-2xl text-gray-800 hover:text-pink-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com" target="_blank" class="text-2xl text-gray-800 hover:text-blue-400 transition"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/@d.iloofficial" target="_blank" class="text-2xl text-gray-800 hover:text-red-600 transition"><i class="fa-brands fa-youtube"></i></a>
             </div>
 
-            <div class="flex flex-col items-center md:items-end text-sm space-y-2">
-                <h3 class="font-bold uppercase mb-2">Sales Support</h3>
-                <a href="mailto:sales@diloofficial.com" class="text-gray-600 hover:text-black">sales@diloofficial.com</a>
-                <p class="text-gray-900 font-semibold mt-2"><i class="fa-solid fa-phone mr-2"></i>+1 (Contact Sales)</p>
-            </div>
+            <p class="text-center text-gray-400 text-xs mt-10 uppercase tracking-widest">© 2026 D'ilo Boutique. All rights reserved.</p>
         </div>
-        <p class="text-center text-gray-400 text-xs mt-12 pt-8 border-t">© 2026 D'ilo Boutique. All rights reserved.</p>
-    </footer>
+    </section>
 
     <div id="cart-sidebar" class="fixed top-0 right-0 w-80 h-full bg-white shadow-2xl z-[60] translate-x-full cart-sidebar p-6">
         <div class="flex justify-between items-center mb-8">
@@ -111,7 +121,7 @@
                 <span>Total:</span>
                 <span id="cart-total">0.000 BHD</span>
             </div>
-            <button onclick="handleCheckout()" class="w-full bg-black text-white py-3 rounded-md font-semibold hover:bg-gray-800">Checkout</button>
+            <button onclick="handleCheckout()" class="w-full bg-black text-white py-3 rounded-md font-semibold hover:bg-gray-800 uppercase tracking-widest">Checkout</button>
         </div>
     </div>
 
@@ -172,7 +182,6 @@
             if(window.cart.length === 0) return alert("Your bag is empty!");
             const totalAmount = window.cart.reduce((sum, item) => sum + item.price, 0);
             try {
-                // SAVING TO FIRESTORE FOR LOOKER STUDIO
                 await addDoc(collection(db, "purchase_attempts"), {
                     items: window.cart,
                     total: totalAmount,
